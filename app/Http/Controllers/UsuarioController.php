@@ -11,9 +11,19 @@ use Cinema\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Redirect;
 use Cinema\User;
+use Illuminate\Routing\Route;
 
 class UsuarioController extends Controller
 {
+    public function __construct()
+    {
+        $this->beforeFilter('@find', ['only' => ['edit', 'update', 'destroy']]);
+    }
+
+    public function find(Route $route)
+    {
+        $this->user = User::find($route->getParameter('usuario'));
+    }
     /**
      * Display a listing of the resource.
      *
@@ -43,13 +53,10 @@ class UsuarioController extends Controller
      */
     public function store(UserCreateRequest $request)
     {
-        User::create([
-            'name' => $request['name'],
-            'email' => $request['email'],
-            'password' => $request['password'],
-        ]);
+        User::create($request->all());
 
-        return redirect('/usuario')->with('message','store');
+        Session::flash('message', 'Usuario registrado correctamente!');
+        return Redirect::to('/usuario');
     }
 
     /**
@@ -71,8 +78,7 @@ class UsuarioController extends Controller
      */
     public function edit($id)
     {
-        $user = User::find($id);
-        return view('usuario.edit', ['user'=>$user]);
+        return view('usuario.edit', ['user'=>$this->user]);
     }
 
     /**
@@ -84,9 +90,8 @@ class UsuarioController extends Controller
      */
     public function update(UserUpdateRequest $request, $id)
     {
-        $user = User::find($id);
-        $user->fill($request->all());
-        $user->save();
+        $this->user->fill($request->all());
+        $this->user->save();
 
         Session::flash('message', 'Usuario editado correctamente!');
         return Redirect::to('/usuario');
@@ -100,8 +105,7 @@ class UsuarioController extends Controller
      */
     public function destroy($id)
     {
-        $user = User::find($id);
-        $user->delete();
+        $this->user->delete();
         Session::flash('message', 'Usuario eliminado correctamente!');
         return Redirect::to('/usuario');
     }
