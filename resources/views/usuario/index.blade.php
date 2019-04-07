@@ -38,4 +38,9 @@
         </table>
     </div>
 
+	<div class="float-right">
+		{!! $users->render() !!}
+	</div>
+    	
+
 @stop
