@@ -9,9 +9,9 @@
     <link rel="icon" href="../../../../favicon.ico">
     <title>Admin</title>
     <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    {!! Html::style('css/bootstrap.min.css') !!}
     <!-- Custom styles for this template -->
-    <link href="css/admin.css" rel="stylesheet">
+    {!! Html::style('css/admin.css') !!}
   </head>
 
   <body>
@@ -96,19 +96,20 @@
 
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
 
+          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+            <h1 class="h2">@yield('title')</h1>
+          </div>
+
         @yield('content')
           
         </main>
       </div>
     </div>
-
-    <script src="js/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script>window.jQuery || document.write('<script src="js/vendor/jquery-slim.min.js"><\/script>')</script>
-    <script src="js/vendor/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-
+    {!! Html::script('js/jquery-3.3.1.slim.min.js') !!}
+    {!! Html::script('js/vendor/popper.min.js') !!}
+    {!! Html::script('js/bootstrap.min.js') !!}
     <!-- Icons -->
-    <script src="js/dist/feather.min.js"></script>
+    {!! Html::script('js/dist/feather.min.js') !!}
     <script>
       feather.replace()
     </script>
