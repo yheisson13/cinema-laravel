@@ -3,13 +3,38 @@
 @section('content')
 
       <section class="jumbotron text-center">
-        <div class="container">
-          <h1 class="jumbotron-heading">Album example</h1>
-          <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don't simply skip over it entirely.</p>
-          <p>
-            <a href="#" class="btn btn-primary my-2">Main call to action</a>
-            <a href="#" class="btn btn-secondary my-2">Secondary action</a>
-          </p>
+        <div class="container-fluid">
+          <div class="row">
+
+            <div class="col-md-8">
+              <h1 class="jumbotron-heading">Album example</h1>
+              <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don't simply skip over it entirely.</p>
+              <p>
+                <a href="#" class="btn btn-primary my-2">Main call to action</a>
+                <a href="#" class="btn btn-secondary my-2">Secondary action</a>
+              </p>
+            </div>
+
+            <div class="col-md-4 text-left">
+
+              @include('alerts.errors')
+              @include('alerts.request')
+
+              {!! Form::open(['route' => 'log.store', 'method' => 'POST']) !!}
+                <div class="form-group">
+                  {!! Form::label('email', 'Correo:') !!}
+                  {!! Form::email('email', null, ['class' => 'form-control', 'placeholder' => 'Ingresa tu correo']) !!}
+                </div>
+                <div class="form-group">
+                  {!! Form::label('password', 'Contraseña:') !!}
+                  {!! Form::password('password', ['class' => 'form-control', 'placeholder' => 'Ingresa tu contraseña']) !!}
+                </div>
+                {!! Form::submit('Iniciar', ['class' => 'btn btn-primary']) !!}
+              {!! Form::close() !!}
+            </div>
+
+          </div>
+          
         </div>
       </section>
 
