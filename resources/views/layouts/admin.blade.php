@@ -115,7 +115,8 @@
         </main>
       </div>
     </div>
-    {!! Html::script('js/jquery-3.3.1.slim.min.js') !!}
+    {!! Html::script('js/jquery-3.3.1.min.js') !!}
+    {!! Html::script('js/script.js') !!}
     {!! Html::script('js/vendor/popper.min.js') !!}
     {!! Html::script('js/bootstrap.min.js') !!}
     <!-- Icons -->
