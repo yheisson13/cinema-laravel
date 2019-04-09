@@ -83,19 +83,19 @@
 
             <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
               <span>Genero</span>
-              <a class="d-flex align-items-center text-muted" href="#">
+              <a class="d-flex align-items-center text-muted" href="{!! URL::to('/genero/create') !!}">
                 <span data-feather="plus-circle"></span>
               </a>
             </h6>
             <ul class="nav flex-column mb-2">
               <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="{!! URL::to('/genero/create') !!}">
                   <span data-feather="plus"></span>
                   Agregar
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="{!! URL::to('/genero') !!}">
                   <span data-feather="file-text"></span>
                   Generos
                 </a>
@@ -116,7 +116,6 @@
       </div>
     </div>
     {!! Html::script('js/jquery-3.3.1.min.js') !!}
-    {!! Html::script('js/script.js') !!}
     {!! Html::script('js/vendor/popper.min.js') !!}
     {!! Html::script('js/bootstrap.min.js') !!}
     <!-- Icons -->
@@ -124,5 +123,9 @@
     <script>
       feather.replace()
     </script>
+
+    @section('scripts')
+    @show
+
   </body>
 </html>
