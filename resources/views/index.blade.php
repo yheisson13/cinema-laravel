@@ -31,6 +31,7 @@
                 </div>
                 {!! Form::submit('Iniciar', ['class' => 'btn btn-primary']) !!}
               {!! Form::close() !!}
+              {!! link_to('password/email', 'Olvidaste tu contraseña?', null, null) !!}
             </div>
 
           </div>

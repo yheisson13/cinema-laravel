@@ -9,9 +9,9 @@
     <link rel="icon" href="favicon.ico">
     <title>Cinema</title>
     <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    {!! Html::style('css/bootstrap.min.css') !!}
     <!-- Custom styles for this template -->
-    <link href="css/cinema.css" rel="stylesheet">
+    {!! Html::style('css/cinema.css') !!}
   </head>
 
   <body>
@@ -67,11 +67,11 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="js/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script>window.jQuery || document.write('<script src="js/vendor/jquery-slim.min.js"><\/script>')</script>
-    <script src="js/vendor/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/vendor/holder.min.js"></script>
+    {!! Html::script('js/jquery-3.3.1.slim.min.js') !!}
+    {!! Html::script('js/vendor/jquery-slim.min.js') !!}
+    {!! Html::script('js/vendor/popper.min.js') !!}
+    {!! Html::script('js/bootstrap.min.js') !!}
+    {!! Html::script('js/vendor/holder.min.js') !!}
   </body>
 
 <!-- Mirrored from getbootstrap.com/docs/4.1/examples/album/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 09 Dec 2018 01:17:52 GMT -->
