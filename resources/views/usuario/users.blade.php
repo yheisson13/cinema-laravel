@@ -1,13 +1,4 @@
-@extends('layouts.admin')
-
-@section('title', 'Usuarios')
-
-@section('content')
-
-	@include('alerts.success')
-
-  <div class="users">
-    <div class="table-responsive">
+<div class="table-responsive">
       <table class="table table-striped table-sm">
         <thead>
           <tr>
@@ -33,13 +24,3 @@
     <div class="float-right">
       {!! $users->render() !!}
     </div>
-  </div>
-    
-
-@endsection
-
-@section('scripts')
-
-  {!! Html::script('js/script3.js') !!}
-
-@endsection
