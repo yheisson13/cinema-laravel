@@ -35,3 +35,13 @@ footer {
 footer p {
   margin-bottom: .25rem;
 }
+
+.card-img-top{
+  height: 400px;
+  overflow: hidden;
+}
+
+.card-img-top img{
+  width: 100%;
+  min-height: 400px;
+}

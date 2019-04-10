@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use Cinema\Http\Requests;
 use Cinema\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Redirect;
 use Cinema\Movie;
 use Cinema\Genre;
 
@@ -18,7 +19,9 @@ class MovieController extends Controller
      */
     public function index()
     {
-        //
+        $movies = Movie::Movies();
+
+        return view('pelicula.index', compact('movies'));
     }
 
     /**
@@ -43,7 +46,7 @@ class MovieController extends Controller
     {
         Movie::create($request->all());
 
-        return "Listo";
+        return Redirect::to('/pelicula');
     }
 
     /**
