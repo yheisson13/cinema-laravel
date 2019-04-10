@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use Cinema\Http\Requests;
 use Cinema\Http\Controllers\Controller;
+use Cinema\Movie;
+use Cinema\Genre;
 
 class MovieController extends Controller
 {
@@ -26,7 +28,9 @@ class MovieController extends Controller
      */
     public function create()
     {
-        //
+        $genres = Genre::lists('genre', 'id');
+
+        return view('pelicula.create', compact('genres'));
     }
 
     /**
@@ -37,7 +41,9 @@ class MovieController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Movie::create($request->all());
+
+        return "Listo";
     }
 
     /**
