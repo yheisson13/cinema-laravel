@@ -26,7 +26,9 @@
 		          	<td class="text-center">
 						<img src="movies/{{ $movie->path }}" alt="" width="100">
 		          	</td>
-		          	<td>Editar</td>
+		          	<td>
+						{!! link_to_route('pelicula.edit', 'Editar', $movie->id, ['class'=>'btn btn-primary']) !!}
+		          	</td>
 	          	</tr>
 	        @endforeach
           </tbody>
