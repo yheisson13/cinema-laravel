@@ -13,32 +13,31 @@
       </div>
     </div>
 
-    <form action="">
+    {!! Form::open(['route' => 'mail.store', 'method' => 'POST']) !!}
 
       <div class="row">
         <div class="col-md-6">
           <div class="form-group">
-            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Name">
+            {!! Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'Nombre']) !!}
           </div>
-          <div class="form-group">
-            <input type="email" class="form-control" id="exampleFormControlInput2" placeholder="E-mail">
-          </div>
-          <div class="form-group">
-            <input type="text" class="form-control" id="exampleFormControlInput3" placeholder="Phone">
+          <div class="form-group mt-4">
+            {!! Form::email('email', null, ['class' => 'form-control', 'placeholder' => 'Email']) !!}
           </div>
         </div>
 
         <div class="col-md-6">
           <div class="form-group">
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Message"></textarea>
-          </div>
-          <div class="form-group">
-            <input type="submit" name="" value="Enviar" class="btn btn-dark">
+            {!! Form::textarea('mensaje', null, ['class' => 'form-control', 'placeholder' => 'Mensaje', 'rows' => '3']) !!}
           </div>
         </div>
       </div>
+      <div class="row">
+        <div class="col-md-12">
+          {!! Form::submit('Enviar', ['class' => 'btn btn-dark']) !!}
+        </div>
+      </div>
 
-    </form>
+    {!! Form::close() !!}
 
   </div>
 </div>
